@@ -16,7 +16,8 @@ model = genai.GenerativeModel("gemini-1.5-pro")
 # ---- 1. Define Toolset ----
 toolset = MCPToolset(
     connection_params=StreamableHTTPConnectionParams(
-        url="http://localhost:8080/mcp/stream"
+        # url="http://localhost:8080/mcp/stream"
+        url = "https://fi-money-mcp.onrender.com/mcp/stream"  # Use the production URL for MCP
     )
 )
 

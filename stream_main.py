@@ -27,7 +27,9 @@ def initialize_components():
         # Define Toolset
         toolset = MCPToolset(
             connection_params=StreamableHTTPConnectionParams(
-                url="http://localhost:8080/mcp/stream"
+                # url="http://localhost:8080/mcp/stream"
+                url = "https://fi-money-mcp.onrender.com/mcp/stream"  # Use the production URL for MCP
+
             )
         )
         
@@ -89,7 +91,7 @@ async def fetch_stock_transactions(model, agent, session_service, user_input_tex
         # Generate insights
         insights = None
         if final_response:
-            prompt_question = "Analyze the response and provide insights only in 200 words."
+            prompt_question = "Analyze the response and provide insights only in 400 words."
             response = model.generate_content(f"{prompt_question} {final_response}")
             insights = response.text
         
