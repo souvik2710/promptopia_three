@@ -1,0 +1,7 @@
+mcp[cli]
+requests
+google-adk
+streamlit
+google-generativeai
+anyio
+streamlit
